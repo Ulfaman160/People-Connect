@@ -15,11 +15,11 @@ const AboutUs = () => {
                 <h3 style={{marginBottom:"20px"}}>Developed By</h3>
                 <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
                     <div style={{ textAlign: "center" }}>
-                        <img src="./pic.png" style={{ borderRadius: "50%", height: "100px" }} alt="picmoni Deka" />
+                        <img src="/avatar.png"  alt="" />
                         <p>Indramoni Deka</p>
                     </div>
                     <div style={{ textAlign: "center" }}>
-                        <img src="./avatar.png" style={{ borderRadius: "50%", height: "100px" }} alt="Parag Deka" />
+                        <img src="/avatar.png"  alt="" />
                         <p>Parag Deka</p>
                     </div>
                 </div>

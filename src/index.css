@@ -16,6 +16,7 @@ body {
   color: white;
 }
 
+
 .container {
   display: flex;
   flex-direction: row; /* Default: side-by-side sections */
@@ -124,4 +125,20 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Fade transition animation */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }

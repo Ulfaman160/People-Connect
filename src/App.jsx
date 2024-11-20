@@ -2,15 +2,14 @@ import List from './components/list/List'
 import React, { Profiler } from 'react'; 
 import Chat from './components/chat/Chat'
 import Detail from './components/detail/Detail'
-import Login from './components/login/Login';
 import Notification from './components/notification/Notification';
+import Home from './components/home/Home';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './lib/firebase';
 import { useUserStore } from './lib/userStore.';
 import { useChatStore } from './lib/chatStore';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/home/Home';
 
 const App = () => {
   const { currentUser, isLoading, fetchUserInfo } = useUserStore();

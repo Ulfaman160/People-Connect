@@ -22,27 +22,46 @@ const Login = () => {
         url: URL.createObjectURL(e.target.files[0]),
       });
     }
+    else{
+      setAvatar({
+        file:"/avatar.png",
+        url: URL.createObjectURL("/avatar.png")
+      })
+    }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading0(true);
-
+  
     const formData = new FormData(e.target);
     const { email, password } = Object.fromEntries(formData);
-
+  
     try {
+      // Check if the email exists in the Firestore database
+      const userRef = query(collection(db, "users"), where("email", "==", email));
+      const querySnapshot = await getDocs(userRef);
+  
+      if (querySnapshot.empty) {
+        // If email is not found, show a warning
+        alert('Incorrect email or password');
+        setLoading0(false); // Stop the loading spinner
+        return; // Exit the function early
+      }
+      
+      // Proceed with signing in if email is found in Firestore
       console.log("Attempting to log in with email:", email);
       await signInWithEmailAndPassword(auth, email, password);
       toast.success('Logged in successfully!');
       window.location.reload();
     } catch (err) {
       console.log("Login error:", err);
-      toast.warn('Enter correct email');
+      alert('Email is not registered');
     } finally {
-      setLoading0(false);
+      setLoading0(false); // Stop the loading spinner after the process
     }
   };
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -60,22 +79,18 @@ const Login = () => {
       if (!querySnapshot.empty) {
         // If the username exists, show a toast and return early
         console.log("Username already exists");
-        toast.warn('Username already exists');
+        alert('Username already exists');
         return; // Prevent account creation
       }
 
       // Proceed with creating the user account
       const res = await createUserWithEmailAndPassword(auth, email, password);
       
-      let imgUrl = "";
+      let imgUrl = "./avatar.png";
       // If avatar is provided, upload it
       if (avatar.file) {
         imgUrl = await upload(avatar.file);
-      } else {
-        // Default avatar if none is uploaded
-        imgUrl = "./avatar.png";
-      }
-
+      } 
       // Create user document in Firestore
       await setDoc(doc(db, "users", res.user.uid), {
         username,
@@ -90,7 +105,7 @@ const Login = () => {
         chats: [],
       });
 
-      toast.success("Account created! You can login now!");
+      alert("Account created! You can login now!");
     } catch (err) {
       console.log("Registration error:", err);
       toast.error(err.message);

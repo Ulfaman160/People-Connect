@@ -15,9 +15,10 @@ const UserInfo = () => {
                 <h3>{currentUser.username}</h3>
             </div>
             <div className="icons">
-                <img src="./info.png" alt="" />
-                <img src="./video.png" alt="" />
-                <img src="./edit.png" alt="" />
+                <button className="logout" onClick={() => auth.signOut()} >
+                    Logout
+                </button>
+                
             </div>
         </div>
     );

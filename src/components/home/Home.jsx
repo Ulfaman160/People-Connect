@@ -15,7 +15,7 @@ const Home = () => {
       <nav style={styles.navbar}>
         <div style={styles.navContent}>
           {/* Logo or App Title */}
-          <h1 style={styles.logo}>Home</h1>
+          <h1 style={styles.logo}>About Us</h1>
 
           {/* Login/Signup Button */}
           <button style={styles.button} onClick={handleLoginSignup}>

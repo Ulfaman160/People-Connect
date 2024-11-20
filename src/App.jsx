@@ -10,6 +10,7 @@ import { auth } from './lib/firebase';
 import { useUserStore } from './lib/userStore.';
 import { useChatStore } from './lib/chatStore';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/home/Home';
 
 const App = () => {
   const { currentUser, isLoading, fetchUserInfo } = useUserStore();
@@ -47,7 +48,7 @@ const App = () => {
             
             <>
             {/* User Already Exists */}
-            <Login />
+            <Home />
             </>
           )
         }

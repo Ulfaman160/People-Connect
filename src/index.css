@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("/bg.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center; /* Changed from center to flex-start */
+  justify-content: center;
+  min-height: 100vh; /* Ensure proper scaling */
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* Default: side-by-side sections */
+  justify-content: space-between;
+  align-items: flex-start; /* Changed from center to flex-start */
+  width: 90vw;
+  height: 90vh;
+  max-width: 1200px; /* Limit size for larger screens */
+  max-height: 800px;
+  background-color: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(19px) saturate(180%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 20px;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Changed from center to flex-start */
+  align-items: center;
+}
+
+.section form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+.section form input,
+.section form button {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.section form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Responsive design for tablets and smaller laptops */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Adjust height */
+  }
+
+  .section {
+    margin: 20px 0; /* Add spacing between stacked sections */
+  }
+}
+
+/* Optimized design for mobile devices */
+@media (max-width: 480px) {
+  .container {
+    width: 100vw; /* Full width for mobile */
+    height: auto; /* Adjust height automatically */
+    border-radius: 0; /* Remove border-radius for mobile */
+    padding: 10px;
+  }
+
+  .section h2 {
+    font-size: 20px; /* Reduce heading size */
+  }
+
+  .section form input,
+  .section form button {
+    font-size: 14px; /* Reduce input and button sizes */
+    padding: 8px;
+  }
+
+  .section {
+    margin: 10px 0; /* Reduce spacing between sections */
+  }
+}
+
+
+.loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #c21f99;
+  animation: spin 1s ease-in-out infinite;
+  text-align: center;
+  line-height: 80px;
+  font-size: 16px;
+  color: black;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

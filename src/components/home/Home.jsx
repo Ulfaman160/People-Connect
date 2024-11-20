@@ -16,7 +16,7 @@ const Home = () => {
         <div style={styles.navContent}>
           {/* Logo or App Title */}
           <img src="./logo.png" style={{height:"100px", borderRadius:"50%"}} alt="" />
-          <h1 style={styles.logo}>About Us</h1>
+          {/* <h1 style={styles.logo}>About Us</h1> */}
 
           {/* Login/Signup Button */}
           <button style={styles.button} onClick={handleLoginSignup}>

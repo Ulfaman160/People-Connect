@@ -24,7 +24,7 @@ export const useUserStore = create((set) => ({
                     console.warn("User document does not exist.");
                     set({ currentUser: null, isLoading: false });
                 }
-            }, 2000); // 5 seconds timeout
+            }, 2000); 
 
         } catch (err) {
             console.error("Error fetching user info:", err);

@@ -25,7 +25,7 @@ const Home = () => {
         </div>
       </nav>
       {isNewLogin?<Login></Login>:<AboutUs></AboutUs>}
-
+      
     </div>
   );
 };

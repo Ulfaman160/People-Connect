@@ -46,8 +46,6 @@ const styles = {
     // backgroundColor: '#0d6efd', // Navbar background color
     // padding: '10px 20px',
     // boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
-    display: 'flex',
-    justifyContent: 'center',
     flexFlow:'row wrap',
   },
   navContent: {

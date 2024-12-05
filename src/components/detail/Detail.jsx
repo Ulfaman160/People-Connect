@@ -107,13 +107,6 @@ const Detail = () => {
           }
         </button>
 
-        <button
-          className="logout"
-          style={isHide ? hideStyle : { display: "block" }}
-          onClick={() => auth.signOut()}
-        >
-          Logout
-        </button>
       </div>
     </div>
   );

@@ -3,10 +3,8 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-
-
 const firebaseConfig = {
-  apiKey: import.meta.env.API_KEY,
+  apiKey: import.meta.env.VITE_API_KEY,
   authDomain: "chat-app-b1340.firebaseapp.com",
   projectId: "chat-app-b1340",
   storageBucket: "chat-app-b1340.firebasestorage.app",

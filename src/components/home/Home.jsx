@@ -10,7 +10,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={{width:"100%"}}>
       {/* Responsive Navbar */}
       <nav style={styles.navbar}>
         <div style={styles.navContent}>
@@ -42,6 +42,13 @@ const styles = {
     // boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
     display: "flex",
     justifyContent: "center",
+    // width: '1157px',
+    // backgroundColor: '#0d6efd', // Navbar background color
+    // padding: '10px 20px',
+    // boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow:'row wrap',
   },
   navContent: {
     width: "100%",

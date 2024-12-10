@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -11,20 +10,16 @@ body {
   background-size: cover;
   display: flex;
   align-items: center;
-  /* Changed from center to flex-start */
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
-  /* Ensure proper scaling */
   color: white;
 }
 
-
 .container {
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  overflow: auto;
+  overflow-y: scroll;
+  /* Always show vertical scrollbar */
   width: 90vw;
   height: 90vh;
   background-color: rgba(17, 25, 40, 0.75);
@@ -32,6 +27,8 @@ body {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 20px;
+  box-sizing: border-box;
+  /* Ensure padding and borders are included in the element's dimensions */
 }
 
 .container::-webkit-scrollbar {
@@ -52,13 +49,11 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 .section {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Changed from center to flex-start */
   align-items: center;
 }
 
@@ -95,14 +90,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Stack sections vertically */
     height: auto;
-    /* Adjust height */
   }
 
   .section {
     margin: 20px 0;
-    /* Add spacing between stacked sections */
   }
 }
 
@@ -110,32 +102,25 @@ body {
 @media (max-width: 480px) {
   .container {
     width: 100vw;
-    /* Full width for mobile */
     height: auto;
-    /* Adjust height automatically */
     border-radius: 0;
-    /* Remove border-radius for mobile */
     padding: 10px;
   }
 
   .section h2 {
     font-size: 20px;
-    /* Reduce heading size */
   }
 
   .section form input,
   .section form button {
     font-size: 14px;
-    /* Reduce input and button sizes */
     padding: 8px;
   }
 
   .section {
     margin: 10px 0;
-    /* Reduce spacing between sections */
   }
 }
-
 
 .loading {
   display: inline-block;

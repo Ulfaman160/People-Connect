@@ -221,7 +221,7 @@ const Chat = () => {
             <EmojiPicker open={openEmoji} onEmojiClick={handleEmoji} width={"300px"} height={"400px"} />
           </div>
         </div>
-        <button className="sendButtom" onClick={handleSend} disabled={isCurrentUserBlocked || isReceiverBlocked} >Send</button>
+        <button className="sendButton" onClick={handleSend} disabled={isCurrentUserBlocked || isReceiverBlocked} >Send</button>
       </div>
     </div>
   );

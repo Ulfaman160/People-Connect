@@ -7,7 +7,7 @@ const divStyle = [{
     justifyContent: 'flex-end',
     flexFlow: 'column',
     gap: '20px',
-    height: '259px',
+    height: '325px',
     alignItems: 'center'
 },
 
